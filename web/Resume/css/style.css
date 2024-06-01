@@ -1,0 +1,89 @@
+.body-back{
+	margin: 0;
+	background-color:#c1f0bb;
+}
+.container{
+	display:block ruby;
+	border-radius: 5px;
+	background-color: black;
+}
+.container ul{
+	list-style: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: rgb(61, 59, 59);
+	
+	
+}
+.container ul li{
+	float: left;
+	margin: 0px 20px;
+}
+.container ul li a{
+	text-decoration: none;
+	color: #d2d4d6;
+	padding: 20px;
+}
+.container ul li a:hover{
+	background-color: #1958b5;
+	color: white;
+}
+
+.a{
+	height: 350px;
+	width: 300px;
+	display: inline-block;
+	float: left;
+	margin-left: 30px;
+	padding:30px 0px;
+
+}
+.top{
+	background-color: #c2d2ca;
+}
+.x{
+	display: inline-block;
+	height: 350px;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+.x ul{
+	list-style: none;
+}
+.x ul li{
+	margin: 10px;
+}
+.ab{
+	margin: 20px 0px 0px;
+	text-align: center;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	text-align: center;
+}
+.ab1{
+	color: rgb(85, 9, 98);
+}
+.ab2{
+	margin-right: 305px;
+	color: indigo;
+}
+.edu{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.y{
+	background-color: turquoise;
+	float: left;
+	display: inline-block;
+	padding: 10px;
+	width: 50%;
+	font-family: 'Courier New', Courier, monospace;
+   height: 430px;                        
+}
+.y input{
+
+	margin: 20px;
+	padding: 10px;
+	width: 400px;
+}
+.z{
+	text-align: center;
+}
