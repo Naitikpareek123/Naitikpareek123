@@ -1,0 +1,72 @@
+Finance Dashboard
+
+
+
+Total_Value=SUM('FinData'[Value]) 
+
+
+Income = CALCULATE([Total_Value],'FinData'[Type]="Income")
+
+
+
+Savings = CALCULATE([Total_Value],'FinData'[Type]="Savings")
+Saving%= DIVIDE([Saving],[Income]) 
+
+
+
+Expense = CALCULATE([Total_Value],'FinData'[Type]="Expense")
+Expense%= DIVIDE([Expense],[Income]) 
+
+
+Year = FORMAT('FinData'[Date],"yyyy")
+Month_Yr =FORMAT('FinData'[Date],"mm ,yy")
+
+
+Income LM = CALCULATE([Total Income],DATEADD(FinData[Date],-1,MONTH))
+Income Change MOM % = DIVIDE([Income],[Income LM]) 
+
+
+Target=CALCULATE(SUM('FinData'[Values]),'FinData'[Type]="Target")
+
+
+****Table****
+Line_Selection_Table=FinData("Type",STRING,"No",INTERGER,
+{
+{"Incone",1},{"Savings",2},{"Expenses",3},{"Target",4}
+})
+
+****Chart****
+Line_Chart_Measures= var Selected_val=SELECTEDVALUES(Line_Selection_Table[NO])
+RETURN SWITCH(Selected_val,1,[Expense%],2,[Income Change MoM%],3,[Savings%],4,[Target])
+
+****Dynamic Title***
+Dynamic_Title =SELECTEDVALUE(Line_Selection_Table[Type])&"by Date
+
+Monthly_Sale=CALCULATE([Total_Value],'FinData'[Month-Yr]="Jan-20")
+
+****SUMMRIZATION****
+Selected_Date = SUMMARIZE('FinData','FinData'[Date],'FinData'[Month_Yr],'FinData'[Year])
+
+
+
+***Conention month-yr***
+Monthly_Sale = Var CV_Selected_Month =SELECTEDVALUE(Selected_Date[Month_Yr])
+RETURN CALCULATE([Total_Value],'FinData'[Month_Yr]=CV_Selected_Month)
+
+****PREVIOUSMONTH*****
+PY_Month_Sale = var PY_Month=PREVIOUSMONTH(Selected_Date[Date])
+RETURN
+CALCULATE([Total_Value],'FinData'[Date]=PY_Month) 
+
+
+Monthly_Growth=DIVIDE([Montly_Sale]-[PY_Month_Sale],[PY_Month_Sale])
+
+Expenses_Monthly_Gr=CALCULATE([Monthly_Growth],'FiData'[Type]="Expense")
+Income_Monthly_Gr=CALCULATE([Monthly_Growth],'FinData'[Type]="Income")
+
+
+Expenses_Monthly_Gr = IF(ISBLANK(CALCULATE([Monthly_Growth],'FinData'[Type]="Expense")),0)
+Income_Monthly_Gr = IF(ISBLANK(CALCULATE([Monthly_Growth],'FinData'[Type]="Income")),0)
+Savings_Monthly_Gr=
+var val=CALCULATE([Monthly_Growth],'FinData'[Type]="Savings")
+RETURN IF(val=BLANK(),0,val)
