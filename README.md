@@ -17,8 +17,7 @@
 - 🔭 **Working on:** Python Automations, Full Stack Web Apps & AI Tools.
 - 🌱 **Learning & Exploring:** Cloud Architecture, Automated CI/CD Pipelines & DevOps.
 - 💬 **Ask me about:** Python, Web Development, Machine Learning & Automation.
-- 📫 **How to reach me:** 
-aitikpareek104@gmail.com
+- 📫 **How to reach me:** naitikpareek104@gmail.com
 
 ---
 
