@@ -26,16 +26,16 @@
 
 ### 💻 AI System Diagnostics
 
-``python
+```python
 class AIEngineer:
     def __init__(self):
         self.identity = "Naitik Pareek"
         self.academic = "Artificial Intelligence & Data Science (AI & DS)"
-        self.role = "AI Team Member @ Production Systems"
-        self.domains = ["Autonomous AI Agents", "Machine Learning", "Full-Stack AI"]
-        self.stack = ["Python", "Angular", "Next.js", "Node.js", "OpenCV"]
-        self.status = "Optimizing models and building autonomous agent pipelines 🚀"
-``
+        self.role     = "AI Team Member @ Production Systems"
+        self.domains  = ["Autonomous AI Agents", "Machine Learning", "Full-Stack AI"]
+        self.stack    = ["Python", "Angular", "Next.js", "Node.js", "OpenCV"]
+        self.status   = "Optimizing models & building autonomous agent pipelines 🚀"
+```
 
 ---
 
@@ -81,12 +81,12 @@ class AIEngineer:
 
 ### 🧬 Autonomous System Architecture
 
-`mermaid
-graph LR
-    A[Data Stream / Input] --> B[AI Automation Agent]
-    B --> C[ML & Neural Model Inference]
-    C --> D[Angular / Next.js Full Stack UI]
-`
+```mermaid
+flowchart LR
+    A["📡 Data Stream / Input"] --> B["🤖 AI Automation Agent"]
+    B --> C["🧠 ML & Neural Inference"]
+    C --> D["⚡ Angular / Next.js Full Stack UI"]
+```
 
 ---
 
